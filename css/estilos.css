@@ -7,10 +7,56 @@
     text-shadow: 0 0 1px #000;
 }
 
+.card {
+    background: transparent;
+    border: transparent;
+}
+
+#todos {
+    position: relative;
+    display: inline;
+    overflow: hidden;
+    z-index: 10;
+}
+
+#todos:hover::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: yellow;
+    animation-name: subrayado;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    z-index: -1;
+}
+
 .card-body a {
     transition: background-color .5s;
 }
 
 .card-body a:hover {
     background-color: aquamarine;
+}
+
+.fondo {
+    background: linear-gradient(
+        120deg,
+        #21c4ffCA,
+        #2EC7FFCA, 
+        #3CE6FDCA,
+        #47E9FFCA,
+        #5cecffCA);
+}
+
+@keyframes subrayado {
+    0% {
+        width: 10%;
+    }
+
+    100% {
+        width: 100%;
+    }
 }
